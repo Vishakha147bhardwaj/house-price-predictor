@@ -1,0 +1,7 @@
+{
+  "model": "RandomForestRegressor",
+  "mae_usd": 32784,
+  "r2": 0.8044,
+  "train_rows": 16512,
+  "test_rows": 4128
+}
