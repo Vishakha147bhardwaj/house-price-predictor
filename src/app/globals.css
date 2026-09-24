@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-body);
+  --font-display: var(--font-heading);
+
+  --color-ivory: #faf7f2;
+  --color-bone: #f3eee6;
+  --color-sand: #e8dfd0;
+  --color-line: #e4dccf;
+  --color-taupe: #8a7f72;
+  --color-ink: #1f1d1a;
+  --color-gold: #a8844f;
+  --color-gold-deep: #8c6c3d;
+}
+
+html {
+  background: var(--color-ivory);
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--color-ink);
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+@layer components {
+  .eyebrow {
+    @apply text-[11px] font-medium uppercase tracking-[0.28em] text-gold;
+  }
+
+  .panel {
+    @apply border border-line bg-white/70 p-6 sm:p-8;
+  }
+
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 bg-ink px-7 py-3.5 text-xs font-medium uppercase tracking-[0.2em] text-ivory transition-colors hover:bg-gold-deep disabled:cursor-not-allowed disabled:bg-sand disabled:text-taupe;
+  }
+
+  .slider {
+    @apply h-px w-full cursor-pointer appearance-none bg-sand accent-gold;
+  }
+  .slider::-webkit-slider-thumb {
+    @apply h-4 w-4 appearance-none rounded-full border border-gold bg-ivory shadow-[0_0_0_4px_rgb(168_132_79/0.12)];
+  }
+  .slider::-moz-range-thumb {
+    @apply h-4 w-4 rounded-full border border-gold bg-ivory;
+  }
+}
+
+.leaflet-container {
+  background: var(--color-bone);
+  font-family: inherit;
+}
+
+.photo-fallback {
+  background: linear-gradient(135deg, #efe7da, #e2d6c3);
+}
